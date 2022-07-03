@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>PastryMonica | Crear Cuenta</title>
+	<link href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		id="bootstrap-css">
+	<link rel="stylesheet" href="/CSS/crear_usuario.css">
+</head>
+
+<body>
+	<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+		<div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}" style="font-size:20px" />
+		<div class="card card0 border-0">
+			<div class="row d-flex">
+				<div class="col-lg-6">
+					<div class="card1 pb-5">
+						<div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+							<img src="/img/pastry1.jpeg" class="img-fluid">
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-6">
+					<form th:action="@{/usuario/save1}" method="post" th:object="${usuario}">
+						<input type="hidden" id="idCodigo" name="codigo" value="0">
+						<input type="hidden" id="idTipo" name="id_tipo" value="2">
+						<div class="card2 card border-0 px-4 py-5">
+							<h3 class="mb-1">Crea tu Cuenta PastryMonica</h3>
+							<p class="mb-4 text-sm">
+								¿Ya tienes una cuenta? <a class="text-primary login" href="/login">Iniciar
+									Sesion</a>
+							</p>
+							<div class="row mt-3">
+								<div class="col-md-6">
+									<input type="hidden" th:field="*{codigo}" value="null">
+									<input type="hidden" th:field="*{id_tipo}" value="2">
+									<label class="mb-0">
+										<h6 class="mb-0 text-sm">Nombres</h6>
+									</label> <input type="text" th:field="*{nombre}" required="required">
+								</div>
+								<div class="col-md-6">
+									<label class="mb-0">
+										<h6 class="mb-0 text-sm">Apellidos</h6>
+									</label> <input type="text" th:field="*{apellido}" required="required">
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-md-6">
+									<label class="mb-0">
+										<h6 class="mb-0 text-sm">Usuario</h6>
+									</label> <input type="text" th:field="*{usuario}" required="required">
+								</div>
+								<div class="col-md-6">
+									<label class="mb-0">
+										<h6 class="mb-0 text-sm">Contraseña</h6>
+									</label> <input type="password" th:field="*{pass}" required="required">
+								</div>
+							</div>
+							<div class="row px-3">
+								<label class="mb-0">
+									<h6 class="mb-0 text-sm">Correo Electrónico</h6>
+								</label> <input type="email" th:field="*{correo}" required="required">
+							</div>
+
+							<div class="row mb-4">
+								<div class="col-md-5">
+									<button type="submit" class="btn btn-blue text-center mb-1">Crear Cuenta</button>
+
+								</div>
+								<div class="col-md-7">
+									<small class="text-muted">Al crear una cuenta en
+										PastryStore, usted comprende y acepta los <u>Terminos de
+											servicio</u>, incluyendo el <u>Acuerdo de usuario</u> y la <u>Politica
+											de privacidad</u>.
+									</small>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+		<div class="bg-blue py-4">
+			<div class="row px-3">
+				<small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022.
+					Todos los derechos reservados.</small>
+				<div class="social-contact ml-4 ml-sm-auto">
+					<span class="fa fa-facebook mr-4 text-sm"></span> <span
+						class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span>
+					<span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+</body>

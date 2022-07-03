@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/CSS/css_principal.css">
+<link rel="stylesheet" href="/CSS/tablestyle.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	id="bootstrap-css" />
+<script src="/JS/js_principal.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'
+	crossorigin='anonymous'></script>
+
+
+<title>Document</title>
+</head>
+
+<body>
+<body id="body-pd">
+	<header class="header" id="header" th:replace="principal::header">
+
+	</header>
+	<div class="l-navbar" id="nav-bar" th:replace="principal::navbar">
+
+	</div>
+	<!--Container Main start-->
+
+	<div class="container" id="container">
+		<div class="panel">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col col-sm-3 col-xs-12">
+						<h4 class="title" align="center">Listado de Marcas</h4>
+					</div>
+					<div class="col-sm-9 col-xs-12 text-right">
+						<div class="btn_group">
+							<a class="btn btn-default" href="/marca/all" title="Reload"><i
+								class="fa fa-sync-alt"></i></a> <a class="btn btn-default"
+								href="/marca/create" title="Nuevo"><i
+								class="fas fa-plus-square"></i></a> <a class="btn btn-default"
+								href="http://localhost:8080/report/reportM" title="Pdf"><i class="fa fa-file-pdf"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel-body table-responsive" id="myTable">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th>Codigo</th>
+							<th>Marca</th>
+							<th>Vendedor</th>
+							<th>Telefono de Contacto</th>
+							<th>Correo</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="m:${marca}">
+							<td th:text="${m.cod_marca}"></td>
+							<td th:text="${m.descr_marca}"></td>
+							<td th:text="${m.vendedor}"></td>
+							<td th:text="${m.telefono}"></td>
+							<td th:text="${m.correo}"></td>
+							<td>
+								<ul class="action-list">
+									<li><a class="btn-link" data-tip="Modificar"
+										th:href="@{/marca/edit/{id}(id=${m.cod_marca})}"> <i
+											class="fa fa-edit"></i>
+									</a></li>
+									<li></li>
+									<li><a class="btn-link" data-tip="Eliminar"
+										th:href="@{/marca/delete/{id}(id=${m.cod_marca})}"> <i
+											class="fa fa-ban"></i>
+									</a></li>
+								</ul>
+							</td>
+						</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!--Container Main end-->
+</body>
+
+
+
+</html>

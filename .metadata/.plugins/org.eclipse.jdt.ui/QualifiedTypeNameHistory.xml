@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.pastry.dao.api.TipoDaoAPI"/>
+    <fullyQualifiedTypeName name="com.pastry.model.Tipo"/>
+    <fullyQualifiedTypeName name="com.pastry.service.api.TipoServiceAPI"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.pastry.ecom.dto.TipoDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.pastry.ecom.serviceImpl.TipoServiceImpl"/>
+</qualifiedTypeNameHistroy>
